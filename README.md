@@ -23,3 +23,6 @@ The `file_name_path` is the path for the text file. I've added some example text
 ```bash
 python3 main.py books/mobydick.txt
 ```
+
+## Demo Video
+https://github.com/user-attachments/assets/bacdb60f-339f-46ec-b49b-448707c5b6ee
