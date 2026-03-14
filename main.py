@@ -1,29 +1,21 @@
-from stats import get_num_words, get_num_characters, read_book, sort_result
+from stats import get_book_text, count_words, count_characters
+from report import print_report
 import sys
 
 
-def print_dict(my_list:list) -> None:
-    for dt in my_list:
-        print(f"{dt["char"]}: {dt["num"]}")
-
-
-def main() -> None:
-    
-    if len(sys.argv) == 2:
-        file_path = sys.argv[1]
-        book = read_book(file_path)
-        print("============ BOOKBOT ============")
-        print(f"Analyzing book found at {file_path}...")
-        print("----------- Word Count ----------")
-        print(f"Found {get_num_words(book)} total words")
-        print("--------- Character Count -------")
-        print_dict(sort_result(get_num_characters(book)))
-        print("============= END ===============")
-    else:
+def main():
+    if len(sys.argv) != 2:
         print("Usage: python3 main.py <path_to_book>")
         sys.exit(1)
 
+    book_path = sys.argv[1]
+    book_text = get_book_text(book_path)
+    word_count = count_words(book_text)
+    char_counts = count_characters(book_text)
+
+    print_report(book_path, book_text, word_count, char_counts)
+
+
+# call main at the bottom to execute the program
 if __name__ == "__main__":
     main()
-    
-
