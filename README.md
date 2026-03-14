@@ -25,3 +25,4 @@ python3 main.py books/mobydick.txt
 ```
 
 ## Demo Video
+https://github.com/user-attachments/assets/730d028a-5d31-4bc3-8da4-4a2b910ae66c
